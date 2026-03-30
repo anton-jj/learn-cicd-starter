@@ -17,13 +17,13 @@ func TestGetApiKey(t *testing.T) {
 		{
 			name: "Valid api key",
 			headers: http.Header{"Authorization": []string{"ApiKey my-secret-key"},},
-				wantKey: "y-secret-key",
+				wantKey: "my-secret-key",
 				wantErr: false,
 		},
 		{
 			name:       "missing header",
 			headers:    http.Header{},
-			wantKey:    "some",
+			wantKey:    "",
 			wantErr:    true,
 			errCompare: ErrNoAuthHeaderIncluded,
 		},
