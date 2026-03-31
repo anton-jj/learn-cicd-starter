@@ -25,8 +25,7 @@ func TestGetApiKey(t *testing.T) {
 			headers:    http.Header{},
 			wantKey:    "",
 			wantErr:    true,
-			errCompare: ErrNoAuthHeaderIncluded,
-		},
+			errCompare: ErrNoAuthHeaderIncluded},
 		{
 			name: "wrong prefix",
 			headers: http.Header{
@@ -35,6 +34,7 @@ func TestGetApiKey(t *testing.T) {
 			wantKey: "",
 			wantErr: true,
 		},
+
 		{
 			name: "malformed header - no key",
 			headers: http.Header{
