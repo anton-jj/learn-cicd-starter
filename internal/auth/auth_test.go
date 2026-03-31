@@ -15,10 +15,10 @@ func TestGetApiKey(t *testing.T) {
 		errCompare error
 	}{
 		{
-			name: "Valid api key",
-			headers: http.Header{"Authorization": []string{"ApiKey my-secret-key"},},
-				wantKey: "my-secret-key",
-				wantErr: false,
+			name:    "Valid api key",
+			headers: http.Header{"Authorization": []string{"ApiKey my-secret-key"}},
+			wantKey: "my-secret-key",
+			wantErr: false,
 		},
 		{
 			name:       "missing header",
